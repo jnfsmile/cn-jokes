@@ -18,7 +18,10 @@ export class DisplayJokesComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.jokes = this.jokesService.getJokes('');
+    this.route.paramMap.subscribe(params => {
+      this.jokes = this.jokesService.getJokes(params.get('category'));
+    });
+
   }
 
 }
