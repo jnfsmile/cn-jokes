@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class CategoryService {
 
-  categories = ['ALL', 'nerd', 'ex'];
+  categories = ["explicit", "nerdy"];
 
   getCategories() {
     return this.categories;

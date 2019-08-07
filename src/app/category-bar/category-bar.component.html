@@ -1,5 +1,8 @@
 <ul>
+  <li>
+    <a routerLink="/">ALL</a>&nbsp;
+  </li>
   <li *ngFor="let cat of categories">
-    <a routerLink="/category/{{cat}}">{{cat}}</a>&nbsp;
+    <a routerLink="/{{cat}}">{{cat}}</a>&nbsp;
   </li>
 </ul>

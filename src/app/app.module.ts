@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CategoryBarComponent } from './category-bar/category-bar.component';
+import { DisplayJokesComponent } from './display-jokes/display-jokes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryBarComponent
+    CategoryBarComponent,
+    DisplayJokesComponent
   ],
   imports: [
     BrowserModule,
