@@ -11,6 +11,8 @@ import { JokesService } from './jokes.service';
 export class DisplayJokesComponent implements OnInit {
 
   jokes;
+  qty = 10;
+  cat = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -19,9 +21,15 @@ export class DisplayJokesComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.jokes = this.jokesService.getJokes(params.get('category'));
+      this.cat = params.get('category');
+      this.jokes = this.jokesService.getJokes(this.cat, this.qty);
     });
 
+  }
+
+  reloadJokes(obj) {
+    console.log(obj);
+    this.jokes = this.jokesService.getJokes(this.cat, this.qty);
   }
 
 }
