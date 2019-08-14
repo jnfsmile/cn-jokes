@@ -4,5 +4,10 @@ ul {
     li {
         display: inline;
         text-transform: capitalize;
+        a {
+            color: #bebeff;
+            text-decoration: none;
+            font-weight: bold;
+        }
     }
 }

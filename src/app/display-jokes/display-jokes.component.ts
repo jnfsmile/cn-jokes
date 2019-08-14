@@ -12,6 +12,7 @@ export class DisplayJokesComponent implements OnInit {
 
   jokes;
   cat = "";
+  catColors = new Map();
 
   constructor(
     private route: ActivatedRoute,
@@ -29,6 +30,21 @@ export class DisplayJokesComponent implements OnInit {
   reloadJokes(num) {
     this.jokesService.getJokes(this.cat, num)
       .subscribe(jokes => this.jokes = jokes.value);
+  }
+
+  categoryColor(categories) {
+    if (categories.length === 0) return {};
+    if (!this.catColors.has(categories[0])) {
+      let color = this.brightColor();
+      this.catColors.set(categories[0], color)
+    }
+    return { "color": this.catColors.get(categories[0]) };
+  }
+
+  brightColor() {
+    return "hsl(" + 360 * Math.random() + ',' +
+      '100%,' +
+      (65 + 10 * Math.random()) + '%)';
   }
 
 }

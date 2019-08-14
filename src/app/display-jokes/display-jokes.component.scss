@@ -1,0 +1,26 @@
+.display-jokes {
+    padding: 0 3em;
+}
+
+li {
+    animation: appear 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    opacity: 0;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: $i*0.3s;
+      }
+    }
+}
+
+@keyframes appear {
+    from {
+        margin-left: -3%;
+        opacity: 0;
+    }
+  
+    to {
+      margin-left: 0%;
+      opacity: 1;
+    }
+}
